@@ -3,9 +3,11 @@
     margin: 0;
 
     box-sizing: border-box;
+}
 
+:root {
     font-family: Karla;
-    font-size: 16px;
+    font-size: 16px;    
 
     --Cyan: hsl(179, 62%, 43%);
     --LighterCyan: hsl(179, 62%, 48%);
@@ -14,7 +16,25 @@
     --GrayishBlue: hsl(218, 22%, 67%);
 }
 
-main > div {
+body {
+    min-height: 100vh;
+}
+
+main {
+    width: 95%;
+    min-height: 95vh;
+    max-width: 600px;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.main-content {
+    box-shadow: 0 0 10px hsl(218, 22%, 67%);
+    border-radius: 5px;
+}
+
+.first {
+    border-radius: 5px 5px 0 0;
     padding: 20px;
 }
 
@@ -37,9 +57,15 @@ main > div {
     margin: 10px 0 10px 0;
 }
 
+.wrapper {
+    padding: 0;
+    margin: 0;
+}
+
 .second {
     background: var(--Cyan);
     color: white;
+    padding: 20px;
 }
 
 .second h1 {
@@ -53,7 +79,7 @@ main > div {
     font-size: 0.85rem;
     font-weight: normal;
     margin-top: 13px;
-    color: hsl(179, 62%, 68%);
+    color: hsl(179, 62%, 63%);
 }
 
 .second span {
@@ -75,13 +101,30 @@ main > div {
     background: var(--BrightYellow);
     margin-top: 1.6rem;
     border-radius: 5px;
+    border: 2px solid transparent;
     font-size: 0.85rem;
+    box-shadow: 0 5px 15px hsl(179, 62%, 37%);
+    transition: 0.3s;
+}
+
+.signup:hover {
+    border-top: 2px solid rgba(255, 255, 255, 0.6);
+    border-left: 2px solid rgba(255, 255, 255, 0.3);
+    border-right: 2px solid  rgba(255, 255, 255, 0.3);
+    border-bottom: 2px solid rgba(200, 200, 200, 0.3);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.6) inset,
+                0 0 10px rgba(255, 255, 255, 0.6) inset,
+                0 5px 15px hsl(179, 62%, 27%);
+    text-shadow: 0 1px 5px hsl(218, 22%, 67%);
+    cursor: pointer;
 }
 
 .third {
     background: var(--LighterCyan);
     color: white;
+    padding: 20px;
     padding-bottom: 0;
+    border-radius: 0 0 5px 5px;
 }
 
 .third h1 {
@@ -93,6 +136,64 @@ main > div {
     font-size: 0.75rem;
     margin-top: 17px;
     line-height: 1.1rem;
+    color: hsl(179, 62%, 83%);
+}
+
+footer {
+    font-size: 0.8rem;
+    text-align: center;
+    box-shadow: 0 0 4px rgba(51, 51, 18, 0.4) inset;
+    padding: 4px 0;
+}
+
+footer a {
+    box-shadow: 0 0 6px rgba(69, 102, 37, 0.3) inset;
+    border-radius: 20%;
+    padding: 3px;
+    color: hsl(60, 48%, 14%);
+    font-weight: bold;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+footer a:hover {
+    box-shadow: 0 0 6px rgba(69, 102, 37, 0.8) inset;
+    text-shadow: 0 0 1px var(--BrightYellow);
+    border-radius: 0;
+}
+
+@media only screen and (min-width: 600px) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-content {
+        margin-top: 20px;
+    }
+
+    .wrapper {
+        display: flex;
+    }
+
+    .second {
+        border-radius: 0 0 0 5px;
+    }
+
+    .third {
+        border-radius: 0 0 5px 0;
+    }
+
+    .second,
+    .third {
+        width: 50%;
+    }
+
+    .first,
+    .second,
+    .third {
+        padding: 30px;
+    }
 }
 
 @font-face {
